@@ -14,6 +14,6 @@ To Do 3:
 Make a DxTracker for console command use for python only (like Spleeter) and make a .lua or .py script to import the data to the reaper project.
 Reminder: Never replace the source project, lmao.
 
-Step 1: Send info from Reaper for Python to use, location of files for Track and Speakers.
-Step 2: Run Python script, do the A.I. stuff and send the info to a .csv or something.
-Step 3: Run .Lua script to read that .csv data in Reaper.
+  Step 1: Send info from Reaper for Python to use, location of files for Track and Speakers.
+  Step 2: Run Python script, do the A.I. stuff and send the info to a .csv or something.
+  Step 3: Run .Lua script to read that .csv data in Reaper.
