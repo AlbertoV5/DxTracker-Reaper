@@ -14,7 +14,6 @@ import pandas as pd
 #from resemblyzer import audio
 #from resemblyzer import VoiceEncoder, preprocess_wav, trim_long_silences
 
-
 def Process(longFile, speaker, tr = 0.9):
     encoder = VoiceEncoder()
     
@@ -59,8 +58,7 @@ def Process(longFile, speaker, tr = 0.9):
     df = pd.DataFrame({'Seconds':secPos, 'Score':top[:,1]})
     df.to_csv('timestamps.csv', index = False, header = 'Seconds')
 
-
-def Reaper(color):
+def ReaperMarkers(color):
     ts1 = pd.read_csv('timestamps.csv')
     sec1 = ts1['Seconds']
     name = 'Dx1'
@@ -79,6 +77,8 @@ def Reaper(color):
     with open("projectMarkers.RPP", "w+") as file:
         file.write(r)
 
+#Process("Int01.wav", "Soh1.wav", tr = 0.90)
+Process("Int01.wav", "Joe1.wav", tr = 0.90)
+#ReaperMarkers('17793279')
+ReaperMarkers('17924098.0')
 
-Process("Int01.wav", "Soh1.wav", tr = 0.90)
-Reaper('17793279')
