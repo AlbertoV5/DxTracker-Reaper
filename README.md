@@ -1,11 +1,12 @@
 # DxTracker for Reaper (Resemblyzer)
 
-## Requirements
+## Requirements:
 - Resemblyzer and its requirements
 - Pandas
 
-Track different speakers with AI and add the info to a Reaper project
+Track different speakers with AI and add the info to a Reaper project.
 
+## To Do:
 To Do 1:
 Need to add multiple speaker comatibility.
 Need to add 'no marker where other speaker talks' option.
