@@ -88,6 +88,7 @@ else:
     gtUFdf.to_csv(gtUFpath, index = False)
 
 #Scalar Product for Similarity Score of each Speaker
+print()
 print('Comparing Utterance from Speakers to Guide Track')
 for i in range(len(dxList)):
     result = CompareUtterance(speakersUtterance[i], guideTrackUtterance, float(tr))
