@@ -77,7 +77,7 @@ if Path(gtUFpath).is_file():
     guideTrackUtterance = np.load(gtUFpath, allow_pickle = True)
     print('Done.')
 else:
-    print('\nGetting Utterance Frames for Guide Track:')
+    print('\nGetting Utterance Frames for Guide Track:', gt['name'])
     guideTrackUtterance = GuideTrackUtteranceFrames(encoder, gt, float(hopLength), float(frameLength))
     #Save .npy
     np.save(gtUFpath,guideTrackUtterance, allow_pickle = True)
