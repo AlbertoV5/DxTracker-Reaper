@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Get Guide Track and Dialogue Tracks Utterance and compare to find speakers in audio
-"""
+Version - 0.3
 
+"""
 import soundfile
 import numpy as np
 import pandas as pd
@@ -11,6 +12,8 @@ import configparser
 from resemblyzer import VoiceEncoder
 from tqdm import tqdm
 from pathlib import Path
+
+rscPath = '/Users/albertovaldezquinto/Library/Application Support/REAPER/'
 
 def ReadAudio(filePath, start, end):
     audio, sr = soundfile.read(filePath, start = start, stop = end)
@@ -32,10 +35,10 @@ def GuideTrackUtteranceFrames(encoder, gt, hopLength, frameLength): # Read the g
     return np.array([[(i*hopLength) + start,encoder.embed_utterance(frames[i]*(1/np.max(frames[i])))] for i in tqdm(range(len(frames)),position = 0)])
 
 def CompareUtterance(dxU, gtUF, threshold = 0.91): #gtUF as a [position, guide track utterance] array
-    scalarProduct = np.array( [ [gtUF[i][0], np.dot(dxU,gtUF[i][1])] for i in tqdm(range(len(gtUF))) ] )
+    scalarProduct = np.array([ [gtUF[i][0], np.dot(dxU,gtUF[i][1])] for i in tqdm(range(len(gtUF)))])
     return scalarProduct[np.where(scalarProduct[:,1]>threshold)]
 
-def CompareUtteranceExclusive(dxUList, gtUF, threshold = 0.91): # Compare all speakers with guide track at once
+def CompareUtteranceExclusive(dxUList, gtUF, threshold = 0.9): # Compare all speakers with guide track at once
     scalarProductExclusive = []
     for i in range(len(gtUF)):
         product = [np.dot(j, gtUF[i][1]) for j in dxUList]
@@ -46,31 +49,20 @@ def CompareUtteranceExclusive(dxUList, gtUF, threshold = 0.91): # Compare all sp
     scalarProductExclusive = np.array(scalarProductExclusive)
     return scalarProductExclusive[np.where(scalarProductExclusive[:,1]>threshold)]
 
-def ReaperMarkers(color, name, csvName):
-    ts1 = pd.read_csv(csvName)
-    sec1 = ts1['Position (s)']
-    
-    with open("project.RPP", "r") as file:
-        r = file.read()
-    markers = ''    
-    for i in sec1:
-        markers += '  MARKER 1 ' + str(i) + ' ' + name + ' 0 ' + color + ' 1 B {928F1A51-EA34-874B-BC89-9F00D3638A16}\n'
-    r = r[:-2] + markers + '\n>'
-    with open("projectMarkers.RPP", "w+") as file:  
-        file.write(r)
+def ReaPush():
+    pass
 
 #DATA
-rscPath = '/Users/albertovaldezquinto/Library/Application Support/REAPER/'
 eufPath = rscPath + 'dxTrackerEUF/'
-#Config
 info = configparser.ConfigParser()
 info.read(rscPath + 'dxTracker.ini')
-projectName = info['PROJECT']['name'].split('.')[0]
+
+projectName, gt = info['PROJECT']['name'].split('.')[0], info['GT']
 tr, hopLength, frameLength = info['CONFIG']['threshold'], info['CONFIG']['hopLength'], info['CONFIG']['frameLength']
+gtUFpath = eufPath + projectName + '_' + gt['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.npy'
 
 #Tracks
-gt = info['GT']
-dxList, dxc = [],1
+dxList, dxc = [], 1
 while True:
     try:
         dxList.append(info['DX' + str(dxc)])
@@ -78,52 +70,31 @@ while True:
         break
     dxc+=1
 
-#Get Utterance
+#Get/Read Utterance
 encoder = VoiceEncoder()
 speakersUtterance = [DxUtterance(encoder, i) for i in dxList]
 
-gtUFpath = eufPath + projectName + '_' + gt['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.npy'
 if Path(gtUFpath).is_file():
     print('\nReading Utterance Frames from file: ' + gtUFpath)
-    guideTrackUtterance = np.load(gtUFpath, allow_pickle = True)
-    print('Done.')
+    guideTrackUtterance = np.load(gtUFpath, allow_pickle = True) # Load .npy with name, tr, hop, frame
 else:
     print('\nGetting Utterance Frames for Guide Track:', gt['name'])
     guideTrackUtterance = GuideTrackUtteranceFrames(encoder, gt, float(hopLength), float(frameLength))
-    #Save .npy
-    np.save(gtUFpath,guideTrackUtterance, allow_pickle = True)
+    np.save(gtUFpath,guideTrackUtterance, allow_pickle = True) # Save guide track .npy with name, tr, hop, frame
 
-resultExclusive = CompareUtteranceExclusive(speakersUtterance, guideTrackUtterance, float(0.9))
+#Process
+resultExclusive = CompareUtteranceExclusive(speakersUtterance, guideTrackUtterance, float(tr))
 
-df = pd.DataFrame(resultExclusive)
-df.to_csv('test.csv', index = False)
+print('Comparing Utterance from Speakers to Guide Track.')
 
-resultSpeakers = []
 for i in range(len(dxList)):
     result = resultExclusive[np.where(resultExclusive[:,2] == i)]
-    csvName = eufPath + projectName + '_' + dxList[i]['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.csv'
-    df = pd.DataFrame({'Position (s)':result[:,0], 'Score':result[:,1]})
-    df.to_csv(csvName, index = False)
-
-'''
-#Scalar Product for Similarity Score of each Speaker
-for i in range(len(dxList)):
-    result = CompareUtterance(speakersUtterance[i], guideTrackUtterance, float(tr))
     
     csvName = eufPath + projectName + '_' + dxList[i]['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.csv'
     df = pd.DataFrame({'Position (s)':result[:,0], 'Score':result[:,1]})
     df.to_csv(csvName, index = False)
 
-    #ReaperMarkers('17793279', dxList[i]['name'], csvName)
-'''    
-print()
-print('Done comparing Utterance from Speakers to Guide Track.')
-
-
-
-
-
-
+print('Done.')
 
 
 

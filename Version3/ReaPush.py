@@ -23,19 +23,6 @@ hop, frame = float(info['CONFIG']['hoplength']), float(info['CONFIG']['frameleng
 frame_when_possible = bool(info['PUSH']['frame_when_possible'] != 'False')
 
 dxList = [np.array(pd.read_csv(eufPath + file)[pos]) for file in os.listdir(eufPath) if '.csv' in file and info['PROJECT']['name'] in file]
-    dx0 = np.setdiff1d(dxList[0],dxList[1])
-    dx0 = np.setdiff1d(dx0,dxList[2])
-    dx0 = np.setdiff1d(dx0,dxList[3])
-
-    dx1 = np.setdiff1d(dxList[1],dxList[0])
-    dx1 = np.setdiff1d(dx1,dxList[2])
-    dx1 = np.setdiff1d(dx1,dxList[3])
-    
-    dx2 = np.setdiff1d(dxList[2],dxList[0])
-    dx2 = np.setdiff1d(dx2,dxList[1])
-    dx2 = np.setdiff1d(dx2,dxList[1])
-    
-    dxIsolated = [dx0,dx1,dx2]
         
 with open(projPath + '.RPP', "r") as file:
     r = rpp.loads(file.read())
