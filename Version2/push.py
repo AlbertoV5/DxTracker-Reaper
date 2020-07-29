@@ -66,7 +66,7 @@ if len(dxList) == 3:
 with open(projPath + '.RPP', "r") as file:
     r = rpp.loads(file.read())
 
-for dx in dxIsolated:
+for dx in dxList:
     track = Element(tag = 'TRACK', attrib = [], children = [['NAME', 'Dx']])
     for i in range(len(dx)):
         start = dx[i]

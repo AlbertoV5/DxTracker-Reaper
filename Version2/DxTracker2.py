@@ -30,10 +30,21 @@ def GuideTrackUtteranceFrames(encoder, gt, hopLength, frameLength):
     frames = [audio[(i*hop):(i*hop)+frame] for i in range(audio.size//hop)] # frame list to [position,utterance] array
     return np.array([[(i*hopLength) + start,encoder.embed_utterance(frames[i]*(1/np.max(frames[i])))] for i in tqdm(range(len(frames)),position = 0)])
 
-def CompareUtterance(dxU, gtUF, threshold = 0.91):
-    scalarProduct = np.array([[gtUF[i][0], np.dot(dxU,gtUF[i][1])] for i in tqdm(range(len(gtUF)))])
+def CompareUtterance(dxU, gtUF, threshold = 0.91): #gtUF as a [position, guide track utterance] array
+    scalarProduct = np.array( [ [gtUF[i][0], np.dot(dxU,gtUF[i][1])] for i in tqdm(range(len(gtUF))) ] )
     return scalarProduct[np.where(scalarProduct[:,1]>threshold)]
-    
+
+def CompareUtteranceExclusive(dxUList, gtUF, threshold = 0.91): #gtUF as a [position, guide track utterance] array    
+    scalarProductExclusive = []
+    for i in range(len(gtUF)):
+        product = [np.dot(j, gtUF[i][1]) for j in dxUList]
+        higher = max(product)
+        speaker = int(product.index(higher))
+        scalarProductExclusive.append([gtUF[i][0], higher, speaker])
+        
+    scalarProductExclusive = np.array(scalarProductExclusive)
+    return scalarProductExclusive[np.where(scalarProductExclusive[:,1]>threshold)]
+
 def ReaperMarkers(color, name, csvName):
     ts1 = pd.read_csv(csvName)
     sec1 = ts1['Position (s)']
@@ -82,6 +93,19 @@ else:
     #Save .npy
     np.save(gtUFpath,guideTrackUtterance, allow_pickle = True)
 
+resultExclusive = CompareUtteranceExclusive(speakersUtterance, guideTrackUtterance, float(0.9))
+
+df = pd.DataFrame(resultExclusive)
+df.to_csv('test.csv', index = False)
+
+resultSpeakers = []
+for i in range(len(dxList)):
+    result = resultExclusive[np.where(resultExclusive[:,2] == i)]
+    csvName = eufPath + projectName + '_' + dxList[i]['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.csv'
+    df = pd.DataFrame({'Position (s)':result[:,0], 'Score':result[:,1]})
+    df.to_csv(csvName, index = False)
+
+'''
 #Scalar Product for Similarity Score of each Speaker
 for i in range(len(dxList)):
     result = CompareUtterance(speakersUtterance[i], guideTrackUtterance, float(tr))
@@ -91,7 +115,7 @@ for i in range(len(dxList)):
     df.to_csv(csvName, index = False)
 
     #ReaperMarkers('17793279', dxList[i]['name'], csvName)
-    
+'''    
 print()
 print('Done comparing Utterance from Speakers to Guide Track.')
 
