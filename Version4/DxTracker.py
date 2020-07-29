@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Get Guide Track and Dialogue Tracks Utterance and compare to find speakers in audio
-Version - 0.3
+Version - 0.4
 
 """
 import soundfile
@@ -29,9 +29,7 @@ def DxUtterance(encoder, dx):
 def GuideTrackUtteranceFrames(encoder, gt, hopLength, frameLength): # Read the guide track and separate utterance in frames
     sr, start, end = int(gt['sr']), float(gt['start']), float(gt['end'])
     hop, frame = int(hopLength * sr), int(frameLength * sr)
-
-    audio, sr = ReadAudio(gt['path'], int(start*sr), int(end*sr)) # Read audio file
-    
+    audio, sr = ReadAudio(gt['path'], int(start*sr), int(end*sr)) # Read audio file    
     frames = [audio[(i*hop):(i*hop)+frame] for i in range(audio.size//hop)] # frame list to [position,utterance] array
     return np.array([[(i*hopLength) + start,encoder.embed_utterance(frames[i]*(1/np.max(frames[i])))] for i in tqdm(range(len(frames)),position = 0)])
 
@@ -50,21 +48,18 @@ def CompareUtteranceExclusive(dxUList, gtUF, threshold = 0.9): # Compare all spe
     scalarProductExclusive = np.array(scalarProductExclusive)
     return scalarProductExclusive[np.where(scalarProductExclusive[:,1]>threshold)]
 
-def ReaPush(r,projPath,dx,hop,frame,gtSource,frameWP,name):
-    track = Element(tag = 'TRACK', attrib = [], children = [['NAME', name]])
+def ReaPush(r,projPath,dx,scores,hop,frame,gtSource,trackName,trackColor):
+    track = Element(tag = 'TRACK', attrib = [], children = [['NAME', trackName],['PEAKCOL',trackColor]])
     for i in range(len(dx)):
-        start = dx[i]
-        if frameWP:
-            length = frame
-            try:
-                if start + length > dx[i+1]:
-                    length = hop
-            except:
-                pass
-        else:
-            length = hop
+        start, length = dx[i], frame
+        try:
+            if start + length > dx[i+1]:
+                length = hop
+        except:
+            pass
 
-        item = Element(tag = "ITEM", attrib = [], children = [["POSITION", start], ["LENGTH", length], ["SOFFS", start],
+        item = Element(tag = "ITEM", attrib = [], children = [
+            ["POSITION", start], ["LENGTH", length], ["SOFFS", start], ['NAME', int(scores[i]*100)],
             Element(tag = 'SOURCE WAVE', attrib = [], children = [['FILE', gtSource]])])
         track.insert(len(track), item)
             
@@ -112,7 +107,7 @@ with open(projPath + '.RPP', "r") as file:
 
 for i in range(len(dxList)):
     result = resultExclusive[np.where(resultExclusive[:,2] == int(i))]
-    ReaPush(r, projPath, result[:,0], float(hopLength), float(frameLength), gt['path'], frameWP, dxList[i]['name'])
+    ReaPush(r, projPath, result[:,0], result[:,1], float(hopLength), float(hopLength), gt['path'], dxList[i]['name'], dxList[i]['color'])
     
 with open(projPath + '_.RPP', "w+") as file:
     file.write(rpp.dumps(r))
