@@ -44,7 +44,7 @@ def ReaperMarkers(color, name, csvName):
     for i in sec1:
         markers += '  MARKER 1 ' + str(i) + ' ' + name + ' 0 ' + color + ' 1 B {928F1A51-EA34-874B-BC89-9F00D3638A16}\n'
     r = r[:-2] + markers + '\n>'
-    with open("projectMarkers.RPP", "w+") as file:
+    with open("projectMarkers.RPP", "w+") as file:  
         file.write(r)
 
 #DATA
@@ -71,34 +71,37 @@ while True:
 encoder = VoiceEncoder()
 speakersUtterance = [DxUtterance(encoder, i) for i in dxList]
 
-gtUFpath = eufPath + projectName + '_' + gt['name'] + '_' + tr + hopLength + frameLength + '.csv'
+gtUFpath = eufPath + projectName + '_' + gt['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.npy'
 if Path(gtUFpath).is_file():
-    print('Reading Utterance Frames from file: ' + gtUFpath)
-    df = pd.read_csv(gtUFpath)
-    pos = df['Position (s)'].astype(float)
-    eu = df['Embeded Utterance Frame']
-    guideTrackUtterance = np.array([pos, eu])
+    print('\nReading Utterance Frames from file: ' + gtUFpath)
+    guideTrackUtterance = np.load(gtUFpath, allow_pickle = True)
     print('Done.')
 else:
-    print('Utterance Frames .csv for this project-guidetrack not found.')
-    print('Getting Utterance Frames for Guide Track:')
+    print('\nGetting Utterance Frames for Guide Track:')
     guideTrackUtterance = GuideTrackUtteranceFrames(encoder, gt, float(hopLength), float(frameLength))
-    #Save CSV
-    gtUFdf = pd.DataFrame({'Position (s)': guideTrackUtterance[:,0], 'Embeded Utterance Frame': guideTrackUtterance[:,1]})
-    gtUFdf.to_csv(gtUFpath, index = False)
+    #Save .npy
+    np.save(gtUFpath,guideTrackUtterance, allow_pickle = True)
 
 #Scalar Product for Similarity Score of each Speaker
-print()
-print('Comparing Utterance from Speakers to Guide Track')
 for i in range(len(dxList)):
     result = CompareUtterance(speakersUtterance[i], guideTrackUtterance, float(tr))
     
-    csvName = eufPath + projectName + '_' + dxList[i]['name'] + '_' + tr + hopLength + frameLength + '.csv'
+    csvName = eufPath + projectName + '_' + dxList[i]['name'] + '_' + tr + '_' + hopLength + '_' + frameLength + '.csv'
     df = pd.DataFrame({'Position (s)':result[:,0], 'Score':result[:,1]})
     df.to_csv(csvName, index = False)
+
+    #ReaperMarkers('17793279', dxList[i]['name'], csvName)
     
-    ReaperMarkers('17793279', dxList[i]['name'], csvName)
-    
+print()
+print('Done comparing Utterance from Speakers to Guide Track.')
+
+
+
+
+
+
+
+
 
 
 

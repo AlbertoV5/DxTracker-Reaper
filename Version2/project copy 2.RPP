@@ -208,22 +208,9 @@
     MAINSEND 1 0
     <ITEM
       POSITION 147.42857142857142
-      SNAPOFFS 0
       LENGTH 14.57142857142858
-      LOOP 1
-      ALLTAKES 0
-      FADEIN 0 0 0 0 0 0
-      FADEOUT 0 0 0 0 0 0
-      MUTE 0 0
-      SEL 0
-      IGUID {04F1659B-F11D-3E40-B8DC-9371D87006A7}
-      IID 15
       NAME "Joe Rogan Experience #1147 - Dr. Debra Soh (128kbit_AAC).wav"
-      VOLPAN 1 0 1 -1
       SOFFS 147.42857142857142
-      PLAYRATE 1 1 0 -1 0 0.0025
-      CHANMODE 0
-      GUID {A089D28E-B867-2049-BD09-040FA745060C}
       <SOURCE WAVE
         FILE "Joe Rogan Experience #1147 - Dr. Debra Soh (128kbit_AAC).wav"
       >
