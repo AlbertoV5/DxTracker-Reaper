@@ -14,7 +14,7 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-This script puts together awesome tools like rpp and reapy and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track. It does it by getting the Embeded Utterance of each speaker and a set of frames of Embeded Utterance for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
+This script puts together awesome tools like rpp and reapy and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track and updating your Reaper project. It does it by getting the Embeded Utterance of each speaker and a set of frames of Embeded Utterance for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
 
 - Recommended duration for speaker sample is 5 to 30 seconds (> 10 is best). 
 - The EUF (Embeded Utterance Frames) for the guide track are saved on the 'euframes' folder as a .npy file.
