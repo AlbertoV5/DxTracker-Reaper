@@ -45,7 +45,7 @@ You can modify some values in DxTracker.ini
 
 `threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
 
-`overlapitems = True` Reaper, new project items can overlap between different Dx tracks (based on hop and frame length).
+`overlapitems = True` Resultant items can overlap between different Dx tracks (based on hop and frame length).
 
 Other variables are meant for the project data.
 
