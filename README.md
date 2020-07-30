@@ -38,10 +38,11 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 
 ## Configuration
 You can modify values on DxTracker.ini 
+
 [CONFIG]
-'threshold = 0.9'
-hoplength = 1
-framelength = 3
-overlapitems = True
+`threshold = 0.9`
+`hoplength = 1`
+`framelength = 3`
+`overlapitems = True`
 
 
