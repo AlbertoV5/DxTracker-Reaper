@@ -8,7 +8,7 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Requirements
 
-Python >= 3.7, Reaper DAW
+### Python >= 3.7 and  Reaper DAW
 
 - SoundFile==0.10.2
 - numpy==1.18.5
