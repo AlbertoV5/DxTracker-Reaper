@@ -19,6 +19,7 @@ https://github.com/resemble-ai/Resemblyzer
 3. Select items for dx tracking (at least 2, guide track and one > 5 sec. sample of speakers) and run that new action.
 4. Run track.py, it generates a new project in the same location with new audio tracks.
 
+(WIP)
 ## Installation (Conda Environment)
 
 WIP
