@@ -19,5 +19,17 @@ https://github.com/resemble-ai/Resemblyzer
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Installation (Conda Environment)
+
+## How to Use
+Step 1: Setup your session for Guide Track and number of speakers (4 in this case)
 ![Step1](Guide/step1.gif)
 
+Step2: Find Speakers/Dx in guide track and drag them to their respective Dx tracks.
+![Step2](Guide/step2.gif)
+
+Step3: Find Speakers/Dx in guide track and drag them to their respective Dx tracks.
+![Step3](Guide/step3.gif)
+
+![Step4](Guide/step4.gif)
+
+![Step5](Guide/step5.gif)
