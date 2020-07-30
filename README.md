@@ -67,7 +67,7 @@ Step4: Open Terminal and run trackdx.py in the DxTracker directory and the conda
 
 ![Step4](Guide/step4.gif)
 
-Step5: Once the script is done, open new project '_dxtracker.RPP' in the same directory of the original project.
+Step5: Once the script is done, open new project 'PROJECTNAME_dxtracker.RPP' in the same directory of the original project.
 
 ![Step5](Guide/step5.gif)
 
