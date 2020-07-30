@@ -19,4 +19,5 @@ https://github.com/resemble-ai/Resemblyzer
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Installation (Conda Environment)
-(WIP)
+![Step1](Guide/step1.gif)
+
