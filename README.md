@@ -74,5 +74,6 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 The original resemblyzer demo used real time speaker identification to read an interview and plot the speaker confidence. For DxTracker, as it is designed for audio post, I changed it to what I found most efficient for Reaper, which is having items that reference the guide track file instead of something like generating new audio stems from the GT.
 
 Everything related to Reaper and comparing Utterance is really efficient and it is done within seconds, what takes time is processing the guide track into EUFrames, and mostly depends on the Resemblyzer CPU/GPU configuration. For example, it took around 38 minutes to process a 4 hour, 44.1khz 16bit podcast with the hop, frame = 1, 3 setting with a 3.7 GHz Quad-Core Intel Xeon E5 CPU. Performance may vary, so go make a coffee in the mean time or watch some NBA highlights in your phone.
+![Step5](Guide/refdur.jpg)
 
 
