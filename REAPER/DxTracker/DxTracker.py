@@ -5,14 +5,24 @@
 """
 from reapy import reascript_api as reaper
 import configparser
+from pathlib import Path
 
 rscPath = reaper.GetResourcePath() + '/DxTracker/'
 
 smi = reaper.CountSelectedMediaItems(0)
-projPath = reaper.GetProjectPath('',512)[0]
+projPath = Path(reaper.GetProjectPath('',512)[0])
 selItems = []
 projectName = reaper.GetProjectName(0, '', 512)[1]
-    
+
+while True:
+    if (projPath / projectName).exists():
+        break
+    else:
+        try:
+            projPath = Path(projPath).parents[0]
+        except:
+            reaper.ShowMessageBox("Can't find project in path. Check Project Settings.", "DxTracker", 0)
+
 class Item():
     def __init__(self, item):
         self.item = item

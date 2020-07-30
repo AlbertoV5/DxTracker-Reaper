@@ -94,7 +94,7 @@ outputFile = projectPath / ((projectName).split('.')[0] + '_dxtracker.RPP')
 config, guideTrack = info['CONFIG'], info['GT']
 tr, hop, frame = config['threshold'], config['hopLength'], config['frameLength']
 
-euFramesFile = eufPath / str(projectName.split('.')[0] + '_' + guideTrack['name'] + '_' + hop + '_' + frame + '.npy')
+euFramesFile = eufPath / str(guideTrack['name'] + '_' + hop + '_' + frame + '.npy')
 
 dxList, dxc = [], 1
 while True:
