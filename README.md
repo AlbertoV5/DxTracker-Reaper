@@ -59,7 +59,7 @@ Step2: Cut Speaker Samples (around 10 seconds) from guide track (or other source
 
 ![Step2](Guide/step2.gif)
 
-Step3: Select all items to process (speakers and guide track) and run the DxTracker action.
+Step3: Select all items to process (Speaker Samples and guide track) and run the DxTracker action.
 
 ![Step3](Guide/step3.gif)
 
@@ -67,7 +67,7 @@ Step4: Open Terminal and run trackdx.py in the DxTracker directory and the conda
 
 ![Step4](Guide/step4.gif)
 
-Step5: Once the script is done, open new project '_dxtracker.RPP'.
+Step5: Once the script is done, open new project '_dxtracker.RPP' in the same directory of the original project.
 
 ![Step5](Guide/step5.gif)
 
