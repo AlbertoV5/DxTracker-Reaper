@@ -1,4 +1,4 @@
-# DxTracker for Reaper (using Resemblyzer)
+# DxTracker for Reaper
 
 Track different speakers in your Reaper session using AI (Resemblyzer).
 
