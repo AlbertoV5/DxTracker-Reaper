@@ -27,9 +27,10 @@ Step 1: Setup your session for Guide Track and number of speakers (4 in this cas
 Step2: Find Speakers/Dx in guide track and drag them to their respective Dx tracks.
 ![Step2](Guide/step2.gif)
 
-Step3: Find Speakers/Dx in guide track and drag them to their respective Dx tracks.
+Step3: Select all items to process, speakers and guide track.
 ![Step3](Guide/step3.gif)
 
+Step3: Select all items to process, speakers and guide track.
 ![Step4](Guide/step4.gif)
 
 ![Step5](Guide/step5.gif)
