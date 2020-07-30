@@ -28,15 +28,15 @@ The results are great on interviews and they may vary depending on the Speaker S
 1. Install Anaconda 
 2. Open Terminal and run:
 
-`conda create -n dxt python=3.7
+`conda create -n dxt python=3.7`
 
-git clone https://github.com/AlbertoV5/DxTracker-Reaper.git
+`git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
 
-cd DxTracker-Reaper
+`cd DxTracker-Reaper`
 
-conda activate dxt
+`conda activate dxt`
 
-pip install requirements.txt`
+`pip install requirements.txt`
 
 
 ## Configuration
