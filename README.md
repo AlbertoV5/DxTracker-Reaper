@@ -33,7 +33,9 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 3. `cd DxTracker-Reaper`
 
-4. `pip install requirements.txt`
+4. `conda activate dxt`
+
+5. `pip install requirements.txt`
 
 
 ## Configuration
