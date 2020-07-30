@@ -52,7 +52,8 @@ if smi > 1:
     
     config['PROJECT'] = {'name':projectName,'path':projPath}
     
-    config['GT'] = {'name':gt.trackName,'path':gt.sourcePath,'start':gt.offset,'end':gt.offset + gt.itemLength,'sr':gt.sourceSR}
+    config['GT'] = {'name':gt.trackName,'path':gt.sourcePath, 'sourceName':Path(gt.sourcePath).name,
+                    'start':gt.offset,'end':gt.offset + gt.itemLength,'sr':gt.sourceSR}
                         
     for i in range(len(dxData)):
         config['DX' + str(i+1)] = {'name':dxData[i][0],'path':dxData[i][1],
