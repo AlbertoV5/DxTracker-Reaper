@@ -3,6 +3,7 @@
 
 Find speakers in audio file using A.I. (Resemblyzer) and update your Reaper session.
 https://github.com/resemble-ai/Resemblyzer
+![Step1](Guide/comp.jpg)
 
 ## Requirements
 - SoundFile==0.10.2
