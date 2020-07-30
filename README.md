@@ -13,12 +13,10 @@ https://github.com/resemble-ai/Resemblyzer
 - reapy==0.0
 - rpp==0.4
 
-## How to Use:
-1. Put contents of the REAPER folder in your Reaper Media folder.
-2. Add new action 'DxTracker.py'
-3. Select items for dx tracking (at least 2, guide track and one > 5 sec. sample of speakers) and run that new action.
-4. Run track.py, it generates a new project in the same location with new audio tracks.
+## Installation (Reaper):
+1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > Show REAPER resource path in explorer/finder)
+2. Add new action, 'Load Reascript' and find 'DxTracker.py' that you just placed in your Reaper Media folder.
+3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
-(WIP)
 ## Installation (Conda Environment)
 (WIP)
