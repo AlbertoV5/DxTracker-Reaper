@@ -6,12 +6,12 @@ Find speakers in audio file using A.I. (Resemblyzer) and update your Reaper sess
 https://github.com/resemble-ai/Resemblyzer
 
 ## Requirements:
-SoundFile==0.10.2
-numpy==1.18.5
-tqdm==4.47.0
-Resemblyzer==0.1.1.dev0
-reapy==0.0
-rpp==0.4
+- SoundFile==0.10.2
+- numpy==1.18.5
+- tqdm==4.47.0
+- Resemblyzer==0.1.1.dev0
+- reapy==0.0
+- rpp==0.4
 
 ## How to Use:
 1. Put contents of DxTracker in your Reaper Media folder.
