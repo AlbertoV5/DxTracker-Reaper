@@ -17,8 +17,6 @@ https://github.com/resemble-ai/Resemblyzer
 - reapy==0.0
 - rpp==0.4
 
-### Reaper DAW (working on version 6.13)
-
 ## Description
 
 This script puts together Reaper functionalities and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track and updating your Reaper project. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
