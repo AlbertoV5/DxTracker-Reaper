@@ -14,7 +14,7 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-This script puts together awesome tools like rpp and reapy and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track and updating your Reaper project. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
+This script puts together tools for Reaper and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track and updating your Reaper project. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
 
 - Recommended duration for speaker sample is 5 to 30 seconds (> 10 is best). 
 - The DxTracker.py script will pull data from Reaper and identify which items are mean to be speakers and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
@@ -32,7 +32,7 @@ This script puts together awesome tools like rpp and reapy and modern A.I. imple
 
 ## Configuration
 
-You can modify some values on DxTracker.ini 
+You can modify some values in DxTracker.ini 
 
 `hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
 
