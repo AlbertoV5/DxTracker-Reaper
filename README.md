@@ -17,12 +17,13 @@ https://github.com/resemble-ai/Resemblyzer
 This script puts together awesome tools like rpp and reapy and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track and updating your Reaper project. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
 
 - Recommended duration for speaker sample is 5 to 30 seconds (> 10 is best). 
-- The EUF (Embeded Utterance Frames) for the guide track are saved on the 'euframes' folder as a .npy file.
 - The DxTracker.py script will pull data from Reaper and identify which items are mean to be speakers and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
+- The EUF (Embeded Utterance Frames) for the guide track are stored on the 'euframes' folder as a .npy file for future runs.
 
 ## Installation (Reaper)
-1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > Show REAPER resource path in explorer/finder)
-2. Add new action, 'Load Reascript' and find 'DxTracker.py' that you just placed in your Reaper Media folder.
+
+1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
+2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Installation (Conda Environment)
@@ -30,13 +31,16 @@ This script puts together awesome tools like rpp and reapy and modern A.I. imple
 (WIP) Explain how to install conda and make an environment for Resemblyzer
 
 ## Configuration
-You can modify values on DxTracker.ini 
+
+You can modify some values on DxTracker.ini 
 
 `hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
 
 `threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
 
 `overlapitems = True` Reaper, new project items can overlap between different Dx tracks (based on hop and frame length).
+
+Other variables are meant for the project data.
 
 ## How to Use
 
