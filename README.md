@@ -40,6 +40,8 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 `conda create -n dxt python=3.7`
 
+`git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
+
 `cd DxTracker`
 
 `pip install requirements.txt`
