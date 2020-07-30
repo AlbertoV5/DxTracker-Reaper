@@ -39,8 +39,6 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ## Configuration
 You can modify values on DxTracker.ini 
 
-[CONFIG]
-
 The score theshold for returning a frame: `threshold = 0.9`
 
 Granularity of Embeded Utterance Frames for guide track: `hoplength = 1` `framelength = 3`
