@@ -20,6 +20,15 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Installation (Conda Environment)
 
+## Configuration
+You can modify values on DxTracker.ini 
+
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
+
+`threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
+
+`overlapitems = True` Reaper, new project items can overlap between different Dx tracks (based on hop and frame length).
+
 ## How to Use
 ### Step 1: Setup your session for Guide Track and number of speakers (4 in this case)
 ![Step1](Guide/step1.gif)
@@ -35,15 +44,6 @@ https://github.com/resemble-ai/Resemblyzer
 
 ### Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ![Step5](Guide/step5.gif)
-
-## Configuration
-You can modify values on DxTracker.ini 
-
-`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
-
-`threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
-
-`overlapitems = True` Reaper, new project items can overlap between different Dx tracks (based on hop and frame length).
 
 
 
