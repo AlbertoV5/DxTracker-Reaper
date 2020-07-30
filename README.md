@@ -42,7 +42,10 @@ You can modify values on DxTracker.ini
 [CONFIG]
 
 The score theshold for returning a frame: `threshold = 0.9`
+
 Granularity of Embeded Utterance Frames for guide track: `hoplength = 1` `framelength = 3`
+
 Reaper, new project items can overlap between different Dx tracks: `overlapitems = True`
+
 
 
