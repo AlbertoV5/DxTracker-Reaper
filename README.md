@@ -39,11 +39,11 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ## Configuration
 You can modify values on DxTracker.ini 
 
-The score theshold for returning a frame: `threshold = 0.9`
+`threshold = 0.9` The score theshold for returning a frame.
 
-Granularity of Embeded Utterance Frames for guide track: `hoplength = 1` `framelength = 3`
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track.
 
-Reaper, new project items can overlap between different Dx tracks: `overlapitems = True`
+`overlapitems = True` Reaper, new project items can overlap between different Dx tracks.
 
 
 
