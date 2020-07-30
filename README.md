@@ -81,4 +81,5 @@ Everything related to Reaper and comparing Utterance is really efficient and it 
 Luckily, there is a progress bar.
 ![refduration](Guide/refdur.png)
 
+I'm open to suggestions btw.
 
