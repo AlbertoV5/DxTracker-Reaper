@@ -25,15 +25,18 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 ## Installation (Conda Environment)
 
-1. `conda create -n dxt python=3.7`
+1. Install Anaconda 
+2. Open Terminal and run:
 
-2. `git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
+`conda create -n dxt python=3.7
 
-3. `cd DxTracker-Reaper`
+git clone https://github.com/AlbertoV5/DxTracker-Reaper.git
 
-4. `conda activate dxt`
+cd DxTracker-Reaper
 
-5. `pip install requirements.txt`
+conda activate dxt
+
+pip install requirements.txt`
 
 
 ## Configuration
