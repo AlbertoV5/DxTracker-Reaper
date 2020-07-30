@@ -39,7 +39,7 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ## Configuration
 You can modify values on DxTracker.ini 
 
-`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track.
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
 
 `threshold = 0.9` The score theshold for returning a frame.
 
