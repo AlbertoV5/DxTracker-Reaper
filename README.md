@@ -24,7 +24,7 @@ The script puts together Reaper functionalities and modern voice recognition A.I
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
 - The DxTracker.py script will pull data from Reaper and identify which items are meant to be Speaker Samples and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
 - The EUF (Embeded Utterance Frames) for the guide track are stored on the 'euframes' folder as a .npy file for future runs.
-- It currently works with .wav, may look into adding support for automatic conversion.
+- Supports .wav in 16, 24 bits for any sample rate.
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
@@ -82,5 +82,6 @@ Everything related to Reaper and comparing Utterance is really efficient and it 
 Luckily, there is a progress bar.
 ![refduration](Guide/refdur.png)
 
-I'm open to suggestions btw.
+You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. 
 
+I'm open to suggestions btw.
