@@ -38,13 +38,13 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 (WIP) Explain how to install conda and make an environment for Resemblyzer
 
-`conda create -n dxt python=3.7`
+1. `conda create -n dxt python=3.7`
 
-`git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
+2. `git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
 
-`cd DxTracker`
+3. `cd DxTracker`
 
-`pip install requirements.txt`
+4. `pip install requirements.txt`
 
 
 ## Configuration
