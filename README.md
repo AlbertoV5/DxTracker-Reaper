@@ -1,6 +1,5 @@
 # DxTracker for Reaper (using Resemblyzer) 
 ![alt text](https://i.imgur.com/t1MfFYq.jpg)
-## Description:
 
 Find speakers in audio file using A.I. (Resemblyzer) and update your Reaper session.
 https://github.com/resemble-ai/Resemblyzer
@@ -13,12 +12,22 @@ https://github.com/resemble-ai/Resemblyzer
 - reapy==0.0
 - rpp==0.4
 
-## Installation (Reaper):
+## Description
+
+This script puts together awesome tools like rpp and reapy and modern A.I. implementations for voice recognition into a single workflow tool for identifying multiple speakers in an audio track. It does it by getting the Embeded Utterance of each speaker and a set of frames of Embeded Utterance for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
+
+- Recommended duration for speaker sample is 5 to 30 seconds (> 10 is best). 
+- The EUF (Embeded Utterance Frames) for the guide track are saved on the 'euframes' folder as a .npy file.
+- The DxTracker.py script will pull data from Reaper and identify which items are mean to be speakers and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
+
+## Installation (Reaper)
 1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > Show REAPER resource path in explorer/finder)
 2. Add new action, 'Load Reascript' and find 'DxTracker.py' that you just placed in your Reaper Media folder.
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Installation (Conda Environment)
+
+(WIP) Explain how to install conda and make an environment for Resemblyzer
 
 ## Configuration
 You can modify values on DxTracker.ini 
