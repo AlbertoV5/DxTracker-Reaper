@@ -1,6 +1,6 @@
 # DxTracker for Reaper (using Resemblyzer)
 
-Find speakers in audio file using A.I. (Resemblyzer) and update your Reaper session.
+Track different speakers in your Reaper session using AI (Resemblyzer).
 
 https://github.com/resemble-ai/Resemblyzer
 
