@@ -54,7 +54,7 @@ Step2: Find Speaker Samples (around 10 seconds) in guide track and drag them to 
 
 ![Step2](Guide/step2.gif)
 
-Step3: Select all items to process (speakers and guide track).
+Step3: Select all items to process (speakers and guide track) and run the DxTracker action.
 
 ![Step3](Guide/step3.gif)
 
