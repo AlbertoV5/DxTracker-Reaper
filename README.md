@@ -16,6 +16,9 @@ https://github.com/resemble-ai/Resemblyzer
 ## How to Use:
 1. Put contents of DxTracker in your Reaper Media folder.
 2. Add new action 'DxTracker.py'
-3. Select items for dx tracking (at least 2, guide track and one > 5 sec. sample of speakers)
+3. Select items for dx tracking (at least 2, guide track and one > 5 sec. sample of speakers) and run that new action.
 4. Run track.py, it generates a new project in the same location with new audio tracks.
 
+## Installation (Conda Environment)
+
+WIP
