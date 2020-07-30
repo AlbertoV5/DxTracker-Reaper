@@ -6,17 +6,6 @@ https://github.com/resemble-ai/Resemblyzer
 
 ![Step1](Guide/comp.jpg)
 
-## Requirements
-
-### Python >= 3.7 
-
-- SoundFile==0.10.2
-- numpy==1.18.5
-- tqdm==4.47.0
-- Resemblyzer==0.1.1.dev0
-- reapy==0.0
-- rpp==0.4
-
 ## Description
 
 The script puts together Reaper functionalities and modern voice recognition A.I. implementations into a single tool for identifying multiple speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
