@@ -31,7 +31,7 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 2. `git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
 
-3. `cd DxTracker`
+3. `cd DxTracker-Reaper`
 
 4. `pip install requirements.txt`
 
