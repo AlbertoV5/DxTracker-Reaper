@@ -30,7 +30,8 @@ Step2: Find Speakers/Dx in guide track and drag them to their respective Dx trac
 Step3: Select all items to process, speakers and guide track.
 ![Step3](Guide/step3.gif)
 
-Step3: Select all items to process, speakers and guide track.
+Step4: Open Terminal and run trackdx.py in the DxTracker directory and the conda environment.
 ![Step4](Guide/step4.gif)
 
+Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ![Step5](Guide/step5.gif)
