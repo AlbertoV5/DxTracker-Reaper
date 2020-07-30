@@ -35,3 +35,13 @@ Step4: Open Terminal and run trackdx.py in the DxTracker directory and the conda
 
 Step5: Once the script is done, open new project '_dxtracker.RPP'.
 ![Step5](Guide/step5.gif)
+
+## Configuration
+You can modify values on DxTracker.ini 
+[CONFIG]
+'threshold = 0.9'
+hoplength = 1
+framelength = 3
+overlapitems = True
+
+
