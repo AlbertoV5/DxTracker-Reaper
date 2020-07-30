@@ -1,26 +1,24 @@
-# DxTracker for Reaper (Resemblyzer)
+# DxTracker for Reaper (using Resemblyzer) 
+![alt text](https://i.imgur.com/t1MfFYq.jpg)
+## Description:
+
+Find speakers in audio file using A.I. (Resemblyzer) and update your Reaper session.
+https://github.com/resemble-ai/Resemblyzer
 
 ## Requirements:
-- Resemblyzer and its requirements
-- Pandas
+- SoundFile==0.10.2
+- numpy==1.18.5
+- tqdm==4.47.0
+- Resemblyzer==0.1.1.dev0
+- reapy==0.0
+- rpp==0.4
 
-Track different speakers with AI and add the info to a Reaper project.
+## How to Use:
+1. Put contents of DxTracker in your Reaper Media folder.
+2. Add new action 'DxTracker.py'
+3. Select items for dx tracking (at least 2, guide track and one > 5 sec. sample of speakers) and run that new action.
+4. Run track.py, it generates a new project in the same location with new audio tracks.
 
-## To Do:
-To Do 1:
-Need to add multiple speaker comatibility.
-Need to add 'no marker where other speaker talks' option.
-Need to add no .csv option, add score to marker as 100% and make it so you can run the script from Reaper.
-Need to add reload project or instantly open created project.
+## Installation (Conda Environment)
 
-To Do 2:
-Need to move away from markers and go into cutting items in Reaper in the specific spots and moving them to a new track.
-
-To Do 3:
-Make a DxTracker for console command use for python only (like Spleeter) and make a .lua or .py script to import the data to the reaper project.
-Reminder: Never replace the source project, lmao.
-
-Goal:
-- Step 1: Send info from Reaper for Python to use, location of files for Track and Speakers.
-- Step 2: Run Python script, do the A.I. stuff and send the info to a .csv or something.
-- Step 3: Run .Lua script to read that .csv data in Reaper.
+WIP
