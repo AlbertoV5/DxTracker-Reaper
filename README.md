@@ -50,7 +50,7 @@ Step 1: Setup your session for Guide Track and number of speakers (4 in this cas
 
 ![Step1](Guide/step1.gif)
 
-Step2: Find Speaker Samples (around 10 seconds) in guide track and drag them to their respective Dx tracks.
+Step2: Cut Speaker Samples (around 10 seconds) from guide track (or other sources) and drag them to their respective Dx tracks.
 
 ![Step2](Guide/step2.gif)
 
