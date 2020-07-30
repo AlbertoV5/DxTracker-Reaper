@@ -22,6 +22,8 @@ This script puts together Reaper functionalities and modern A.I. implementations
 - The DxTracker.py script will pull data from Reaper and identify which items are mean to be speakers and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
 - The EUF (Embeded Utterance Frames) for the guide track are stored on the 'euframes' folder as a .npy file for future runs.
 
+The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are limited by user creativity within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
+
 ## Installation (Reaper)
 
 1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
