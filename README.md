@@ -40,8 +40,11 @@ Step5: Once the script is done, open new project '_dxtracker.RPP'.
 You can modify values on DxTracker.ini 
 
 `hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track.
+
 `threshold = 0.9` The score theshold for returning a frame.
+
 `overlapitems = True` Reaper, new project items can overlap between different Dx tracks.
+
 
 
 
