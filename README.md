@@ -43,7 +43,7 @@ If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Plug-
 
 1. 'Custom path to Python dll directory': Run `conda which` and copy the path to the environment you just created. 
 
-2. 'Force Reascript to use specific Python .dylib': `libpython3.7m.dylib`
+2. 'Force Reascript to use specific Python .dylib': `'libpython3.7m.dylib'`
 
 ## Configuration
 
