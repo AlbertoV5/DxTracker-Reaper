@@ -41,7 +41,7 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Plug-ins > Reascript:
 
-1. 'Custom path to Python dll directory': Run `conda which` and copy the path to the environment you just created. 
+1. 'Custom path to Python dll directory': Run `conda env list` and copy the path from the new environment.
 
 2. 'Force Reascript to use specific Python .dylib': `'libpython3.7m.dylib'`
 
