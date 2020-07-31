@@ -1,6 +1,6 @@
 # DxTracker for Reaper
 
-Identify different speakers in your Reaper session using A.I. (Resemblyzer, rpp, reapy).
+Identify different speakers/dialogue in your Reaper session using A.I. (Resemblyzer, rpp, reapy).
 
 https://github.com/resemble-ai/Resemblyzer
 
@@ -8,9 +8,9 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track and creates a new project with the speakers/Dx separated by tracks. It does it by getting the "Embeddings of the Utterance" (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar product in a mutually exclusive way. 
+The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track and creates a new project with the speakers/Dialogue separated by tracks. It does it by getting the "Embeddings of the Utterance" (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar product in a mutually exclusive way. 
 
-- Recommended duration for Speaker Sample is 5 to 30 seconds. 
+- Recommended duration for Speaker/Dialogue Sample is 5 to 30 seconds. 
 - Supports .wav in 16, 24 bits with any common sample rate, mono and stereo.
 - Stores the Utterance Frames (EUF) of the guide track as .npy so you can run multiple threshold/Speaker Samples iterations without restarting the whole process. 
 
