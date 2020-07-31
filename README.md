@@ -22,7 +22,7 @@ The results are great on interviews and they may vary depending on the Speaker S
 1. Install Anaconda 
 2. Open Terminal and run:
 
-`conda create -n dxt python=3.7` (change dxt for however you want to name your environment)
+`conda create -n dxt python=3.7`
 
 `git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
 
