@@ -86,4 +86,4 @@ Luckily, there is a progress bar.
 
 You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. 
 
-I'm open to suggestions btw.
+Feel free to reach out.
