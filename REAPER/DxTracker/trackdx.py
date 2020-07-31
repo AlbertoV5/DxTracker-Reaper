@@ -25,7 +25,8 @@ rscPath = Path(os.getcwd())
 
 def ReadAudio(filePath, start, end):
     audio, sr = soundfile.read(filePath, start = start, stop = end)
-    audio = audio[:,0] + audio[:,1] / audio.size
+    if audio.size == 2: #Stereo sum to mono
+        audio = audio[:,0] + audio[:,1] / audio.size
     return audio, sr
 
 def Normalized(array):
