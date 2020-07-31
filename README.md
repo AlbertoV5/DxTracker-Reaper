@@ -94,3 +94,5 @@ You can use Speaker Samples from different audio sources, as long as you don't m
 The EUF .npy will be saved as 'SourceName_hopLength_frameLength.npy'. Maybe adding support to different item cuts of the GT as start, length in the future.
 
 Feel free to reach out.
+
+https://www.buymeacoffee.com/5bMc9kJ
