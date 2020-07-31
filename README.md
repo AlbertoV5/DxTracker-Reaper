@@ -11,7 +11,7 @@ https://github.com/resemble-ai/Resemblyzer
 The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track and creates a new project with the speakers/Dx separated by tracks. It does it by getting the "Embeddings of the Utterance" (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar product in a mutually exclusive way. 
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds. 
-- Supports .wav in 16, 24 bits with any common sample rate.
+- Supports .wav in 16, 24 bits with any common sample rate, mono and stereo.
 - Stores the Utterance Frames (EUF) of the guide track as .npy so you can run multiple threshold/Speaker Samples iterations without restarting the whole process. 
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
