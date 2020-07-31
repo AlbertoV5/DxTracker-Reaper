@@ -1,6 +1,6 @@
 # DxTracker for Reaper
 
-Track different speakers in your Reaper session using AI (Resemblyzer).
+Identify different speakers in your Reaper session using AI (Resemblyzer).
 
 https://github.com/resemble-ai/Resemblyzer
 
@@ -8,27 +8,20 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-The script puts together Reaper functionalities and modern voice recognition A.I. implementations into a single tool for identifying multiple speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
+The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
-- The DxTracker.py script will pull data from Reaper and identify which items are meant to be Speaker Samples and which one is the guide track, as well as saving relevant project data in the DxTracker.ini file for the trackdx.py script to read.
-- The EUF (Embeded Utterance Frames) for the guide track are stored on the 'euframes' folder as a .npy file for future runs.
-- Supports .wav in 16, 24 bits for any sample rate.
+- Supports .wav in 16, 24 bits for any common sample rate.
+- Stores the EUF (Embeded Utterance Frames) as .npy file.
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
-## Installation (Reaper)
-
-1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
-2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
-3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
-
-## Installation (Conda Environment)
+## Installation (Anaconda Environment)
 
 1. Install Anaconda 
 2. Open Terminal and run:
 
-`conda create -n dxt python=3.7`
+`conda create -n dxt python=3.7` (change dxt for however you want to name your environment)
 
 `git clone https://github.com/AlbertoV5/DxTracker-Reaper.git`
 
@@ -38,6 +31,13 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 `pip install -r requirements.txt`
 
+3. For installing the REAPER content, run: `open REAPER` and follow the Reaper installation:
+
+## Installation (Reaper)
+
+1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
+2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
+3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Configuration
 
@@ -85,4 +85,4 @@ Luckily, there is a progress bar.
 
 You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. 
 
-I'm open to suggestions btw.
+Feel free to reach out.
