@@ -1,6 +1,6 @@
 # DxTracker for Reaper
 
-Identify different speakers in your Reaper session using AI (Resemblyzer).
+Identify different speakers in your Reaper session using A.I. (Resemblyzer).
 
 https://github.com/resemble-ai/Resemblyzer
 
@@ -8,11 +8,11 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each speaker and a set of EU frames for the guide track, then it compares all speakers with each frame using scalar/dot product in a mutually exclusive way. 
+The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar product in a mutually exclusive way. 
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
-- Supports .wav in 16, 24 bits for any common sample rate.
-- Stores the EUF (Embeded Utterance Frames) as .npy file.
+- Supports .wav in 16, 24 bits with any common sample rate.
+- Stores the Embeded Utterance Frames (EUF) of the guide track as .npy so you can run multiple thresholds or Speaker Samples iterations without restarting the whole process. 
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
@@ -39,17 +39,17 @@ The results are great on interviews and they may vary depending on the Speaker S
 2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
-If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Reascript > Enable Python and add the environment directory and .dylib extension. 
+If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Plug-ins > Reascript:
 
-1. Custom path to Python dll: Run `conda which` and copy the path to the environment you just created. 
+1. 'Custom path to Python dll directory': Run `conda env list` and copy the path from the new environment.
 
-2. Force Reascript to use specific Python .dylib: `libpython3.7m.dylib`
+2. 'Force Reascript to use specific Python .dylib': `'libpython3.7m.dylib'`
 
 ## Configuration
 
 You can modify some values in DxTracker.ini 
 
-`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds). You can save multiple settings of EUF of the same guide track as long as you don't change source name.
 
 `threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
 
@@ -89,6 +89,8 @@ Everything related to Reaper and comparing Utterance is really efficient and it 
 Luckily, there is a progress bar.
 ![refduration](Guide/refdur.png)
 
-You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. 
+You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. Also, I have found that a threshold of around 0.92 may work best than the default 0.9 but that's what I'll be testing among other stuff.
+
+The EUF .npy will be saved as 'SourceName_hopLength_frameLength.npy'. Maybe adding support to different item cuts of the GT as start, length in the future.
 
 Feel free to reach out.
