@@ -8,7 +8,7 @@ https://github.com/resemble-ai/Resemblyzer
 
 ## Description
 
-The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar/dot product in a mutually exclusive way. 
+The script combines Reaper and Resemblyzer into a simple tool for identifying speakers in an audio track. It does it by getting the Embeded Utterance (EU) of each Speaker Sample and a set of EU frames for the guide track, then it compares all the Speaker's EU with each frame using scalar product in a mutually exclusive way. 
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
 - Supports .wav in 16, 24 bits with any common sample rate.
