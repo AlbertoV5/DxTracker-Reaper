@@ -49,7 +49,7 @@ If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Plug-
 
 You can modify some values in DxTracker.ini 
 
-`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds). You can save multiple settings of EUF of the same guide track source.
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds). You can save multiple EUF .npy of the same guide track source with different settings.
 
 `threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
 
