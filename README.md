@@ -17,13 +17,7 @@ The script puts together Reaper functionalities and modern voice recognition A.I
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
-## Installation (Reaper)
-
-1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
-2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
-3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
-
-## Installation (Conda Environment)
+## Installation (Anaconda Environment)
 
 1. Install Anaconda 
 2. Open Terminal and run:
@@ -38,6 +32,13 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 `pip install -r requirements.txt`
 
+3. For installing the REAPER content, run: `open REAPER` and follow the Reaper installation:
+
+## Installation (Reaper)
+
+1. Put contents of the REAPER folder in your Reaper Media folder. (Find it with: Options > 'Show REAPER resource path in explorer/finder')
+2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
+3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
 ## Configuration
 
