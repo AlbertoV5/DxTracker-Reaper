@@ -36,7 +36,7 @@ The results are great on interviews and they may vary depending on the Speaker S
 
 `conda activate dxt`
 
-`pip install -requirements.txt`
+`pip install -r requirements.txt`
 
 
 ## Configuration
