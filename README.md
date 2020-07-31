@@ -12,7 +12,7 @@ The script combines Reaper and Resemblyzer into a simple tool for identifying sp
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
 - Supports .wav in 16, 24 bits with any common sample rate.
-- Stores the Embeded Utterance Frames (EUF) of the guide track as .npy file so you can run multiple thresholds or Speaker Samples iterations.
+- Stores the Embeded Utterance Frames (EUF) of the guide track so you can run multiple thresholds or Speaker Samples iteration without restarting the whole process. 
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
@@ -49,7 +49,7 @@ If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Plug-
 
 You can modify some values in DxTracker.ini 
 
-`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds).
+`hoplength = 1` `framelength = 3` Granularity of Embeded Utterance Frames for guide track (in seconds). You can save multiple settings of EUF of the same guide track as long as you don't change source name.
 
 `threshold = 0.9` The score/confidence threshold for returning a frame (ratio).
 
@@ -90,5 +90,7 @@ Luckily, there is a progress bar.
 ![refduration](Guide/refdur.png)
 
 You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. Also, I have found that a threshold of around 0.92 may work best than the default 0.9 but that's what I'll be testing among other stuff.
+
+The EUF .npy will be saved as 'SourceName_frameLength_sourceLength'. Maybe adding support to different item cuts of the GT as start, length in the future.
 
 Feel free to reach out.
