@@ -9,6 +9,7 @@ dx = dialogue
 gt = guide track
 EU = embeded utterance
 
+Author: av5sound.com
 """
 import soundfile
 import numpy as np

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: albertovaldezquinto
+This is the Reaper Action.
+
+Author: av5sound.com
 """
 from reapy import reascript_api as reaper
 import configparser
