@@ -39,7 +39,7 @@ The results are great on interviews and they may vary depending on the Speaker S
 2. Add new action, 'Load Reascript' and find 'DxTracker.py' in your Reaper Media > DxTracker folder.
 3. (Optional) Add it to a toolbar and use icon from the Data > toolbar_icons folder.
 
-If you have issues adding the .py, go to Preferences > Reascript > Enable Python and add the environment directory and .dylib extension. 
+If you have issues adding 'DxTracker.py' as an Action, go to Preferences > Reascript > Enable Python and add the environment directory and .dylib extension. 
 
 1. Custom path to Python dll: Run `conda which` and copy the path to the environment you just created. 
 
