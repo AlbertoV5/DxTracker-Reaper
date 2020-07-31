@@ -3,11 +3,11 @@
 """
 DxTracker 0.1
 
-Obtain Embeded Utterance Frames for Guide Track and Dx Tracks
+Obtain Frames for Embeddings of Utterance for Guide Track and Dx Tracks
 
 dx = dialogue
 gt = guide track
-EU = embeded utterance
+EU = embeddings of utterance
 
 Author: av5sound.com
 """
