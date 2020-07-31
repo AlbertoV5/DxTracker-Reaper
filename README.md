@@ -12,7 +12,7 @@ The script combines Reaper and Resemblyzer into a simple tool for identifying sp
 
 - Recommended duration for Speaker Sample is 5 to 30 seconds (> 10 is best). 
 - Supports .wav in 16, 24 bits with any common sample rate.
-- Stores the EUF (Embeded Utterance Frames) as .npy file.
+- Stores the Embeded Utterance Frames of the guide track as .npy file.
 
 The results are great on interviews and they may vary depending on the Speaker Samples and EUF granularity config. The applications are many within the Reasemblyzer possibilities, for example, finding off-axis takes for a single Dx track based on in-axis and off-axis speaker samples for the same actor, etc.
 
