@@ -1,6 +1,6 @@
 # DxTracker for Reaper
 
-Identify different speakers in your Reaper session using AI (Resemblyzer).
+Identify different speakers in your Reaper session using A.I. (Resemblyzer).
 
 https://github.com/resemble-ai/Resemblyzer
 
