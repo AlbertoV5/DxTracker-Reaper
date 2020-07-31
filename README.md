@@ -89,6 +89,6 @@ Everything related to Reaper and comparing Utterance is really efficient and it 
 Luckily, there is a progress bar.
 ![refduration](Guide/refdur.png)
 
-You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. 
+You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. Also, I have found that a threshold of around 0.92 may work best than the default 0.9 but that's what I'll be testing among other stuff.
 
 Feel free to reach out.
