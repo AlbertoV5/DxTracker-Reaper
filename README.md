@@ -91,6 +91,6 @@ Luckily, there is a progress bar.
 
 You can use Speaker Samples from different audio sources, as long as you don't move the file location around, and if you do, just re-run the DxTracker action to read the new location. Also, I have found that a threshold of around 0.92 may work best than the default 0.9 but that's what I'll be testing among other stuff.
 
-The EUF .npy will be saved as 'SourceName_hopLength_frameLength'. Maybe adding support to different item cuts of the GT as start, length in the future.
+The EUF .npy will be saved as 'SourceName_hopLength_frameLength.npy'. Maybe adding support to different item cuts of the GT as start, length in the future.
 
 Feel free to reach out.
