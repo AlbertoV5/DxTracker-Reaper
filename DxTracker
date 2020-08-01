@@ -1,0 +1,7 @@
+source /opt/anaconda3/etc/profile.d/conda.sh
+
+conda activate vox
+
+cd /Users/albertovaldezquinto/Library/Application\ Support/REAPER/DxTracker
+
+python trackdx.py

@@ -9,12 +9,13 @@ dx = dialogue
 gt = guide track
 EU = embeddings of utterance
 
-Author: av5sound.com
+Author: Alberto Valdez
+av5sound.com
 """
 import soundfile
 import numpy as np
 import configparser
-from resemblyzer import VoiceEncoder
+from resemblyzer import VoiceEncoder, trim_long_silences, normalize_volume
 from tqdm import tqdm
 from pathlib import Path
 import rpp
@@ -35,7 +36,7 @@ def Normalized(array):
 def DxUtterance(encoder, dx):
     sr, start, end = int(dx['sr']), float(dx['start']), float(dx['end'])
     audio, sr = ReadAudio(dx['path'], int(start*sr), int(end*sr))
-    return encoder.embed_utterance(audio*(1/np.max(audio))) #normalize frame
+    return encoder.embed_utterance(trim_long_silences(normalize_volume(audio,0))) #normalize frame
 
 def GuideTrackUtteranceFrames(encoder, gt, hopLength, frameLength): # separate gt in frames and then get utterance for .npy
     sr, start, end = int(gt['sr']), float(gt['start']), float(gt['end'])
@@ -43,7 +44,7 @@ def GuideTrackUtteranceFrames(encoder, gt, hopLength, frameLength): # separate g
     audio, sr = ReadAudio(gt['path'], int(start*sr), int(end*sr))
     frames = [audio[(i*hop):(i*hop)+frame] for i in range(audio.size//hop)] # frame list to [position,utterance] array
     return np.array(
-        [[(i*hopLength) + start, encoder.embed_utterance(Normalized(frames[i]))]
+        [[(i*hopLength) + start, encoder.embed_utterance(normalize_volume(frames[i],0))]
         for i in tqdm(range(len(frames)),position = 0)
         if np.max(frames[i]) > 0])
 
@@ -53,7 +54,7 @@ def CompareUtteranceExclusive(dxUE, gtUEF, threshold = 0.9): # Compare all speak
         product = [np.dot(j, gtUEF[i][1]) for j in dxUE] #scalar product for all the speakers
         higher = max(product)        
         scalarProduct.append([gtUEF[i][0], higher, int(product.index(higher))]) # append position, scalar, speaker
-
+    
     scalarProduct = np.array(scalarProduct)        
     threshold = np.max(scalarProduct[:,1]) * threshold
     return scalarProduct[np.where(scalarProduct[:,1]>threshold)] #pass only scalars > threshold
@@ -95,7 +96,7 @@ outputFile = projectPath / ((projectName).split('.')[0] + '_dxtracker.RPP')
 
 config, guideTrack = info['CONFIG'], info['GT']
 tr, hop, frame = config['threshold'], config['hopLength'], config['frameLength']
-
+    
 euFramesFile = eufPath / str(guideTrack['sourcename'] + '_' + hop + '_' + frame + '.npy')
 
 dxList, dxc = [], 1
@@ -141,3 +142,8 @@ with open(outputFile, "w+") as file:
 
 print('\nDone.')
 
+try:
+    os.system('cd /')
+    os.system('open ' + str(outputFile).replace(' ', '\\ '))
+except:
+    pass

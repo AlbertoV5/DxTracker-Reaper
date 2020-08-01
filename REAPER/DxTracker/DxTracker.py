@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-This is the Reaper Action.
+This is the Reaper Action
 
-Author: av5sound.com
+Author: Alberto Valdez
+av5sound.com
 """
 from reapy import reascript_api as reaper
 import configparser
 from pathlib import Path
+import os
 
 dxtFolder = Path('DxTracker')
 rscPath = Path(reaper.GetResourcePath()) / dxtFolder
@@ -24,6 +26,7 @@ while True:
         except:
             reaper.ShowMessageBox("Can't find project in path. Check Project Settings.", "DxTracker", 0)
 smi = reaper.CountSelectedMediaItems(0) 
+
 
 class Item():
     def __init__(self, item):
@@ -69,8 +72,19 @@ if smi > 1:
                          
     with open(str(rscPath / 'DxTracker.ini'), 'w+') as configFile:
         config.write(configFile)
-    
+
     reaper.ShowMessageBox('All info saved on .ini', 'DxTracker', 0)
-        
+    try:
+        os.system('open Applications/DxTracker')
+        #reaper.Main_SaveProject(0, True)
+    except:
+        reaper.ShowMessageBox('All info saved on .ini', 'DxTracker', 0)
 else:
     reaper.ShowMessageBox('Not enough items selected', 'DxTracker', 0)
+    
+    
+    
+    
+    
+    
+    
