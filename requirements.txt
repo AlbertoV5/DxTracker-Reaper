@@ -1,5 +1,5 @@
 SoundFile==0.10.2
-numpy==1.18.5
+numpy==1.22.0
 tqdm==4.47.0
 Resemblyzer==0.1.1.dev0
 python-reapy==0.7.2
